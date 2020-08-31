@@ -6,11 +6,14 @@ const todayData = [
 ]
 
 const todaySvg = d3.select("svg")
-const rectTags = d3.selectAll("rect")
 
-rectTags
+todaySvg
+  .selectAll("rect")
   .data(todayData)
+  .enter()
+  .append("rect")
   .attr("width", (d, i) => { return d })
-  .attr("y", (d, i) => { return 50 * i })
+  .attr("y", (d, i) => { return 20 * i })
   .attr("x", 0)
-  .attr("height", 40)
+  .attr("height", 16)
+

@@ -1,5 +1,5 @@
 
-const todaySvg = d3.select("svg")
+const todaySvg = d3.select("svg.today")
 
 const barScale = d3.scaleLinear()
   .domain([0, 2000])
@@ -23,3 +23,15 @@ todaySvg
   .attr("x", (d, i) => { return i * 36 + 12 })
   .attr("y", 130)
   .text((d, i) => { return i })
+
+
+const monthSvg = d3.select("svg.month")
+
+monthSvg
+  .selectAll("circle")
+  .data(monthData)
+  .enter()
+  .append("circle")
+  .attr("cx", (d, i) => { return (i % 7) * 120 + 60 })
+  .attr("cy", (d, i) => { return Math.floor(i / 7) * 100 + 60 })
+  .attr("r", (d, i) => { return 5 })

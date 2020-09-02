@@ -9,21 +9,30 @@ const todayGroups = todaySvg
   .data(todayData)
   .enter()
   .append("g")
-  .attr("transform", (d, i) => { return "translate(" + (i * 30) + ", 0)" })
+  .attr("transform", (d, i) => { return "translate(" + (i * 36) + ", 0)" })
 
 todayGroups
   .append("rect")
   .attr("x", 0)
-  .attr("y", (d, i) => { return 112 })
+  .attr("y", (d, i) => { return 120 })
   .attr("width", 24)
   .attr("height", 0)
   .transition()
   .delay((d, i) => { return i * 20 })
-  .attr("y", (d, i) => { return 112 - barScale(d) })
+  .attr("y", (d, i) => { return 120 - barScale(d) })
   .attr("height", (d, i) => { return barScale(d) })
 
 todayGroups
   .append("text")
   .attr("x", 12)
-  .attr("y", 130)
+  .attr("y", 140)
+  .attr("class", "hours")
   .text((d, i) => { return i })
+
+todayGroups
+  .append("text")
+  .attr("x", 12)
+  .attr("y", (d, i) => { return 110 - barScale(d) })
+  .attr("class", "steps")
+  .text((d, i) => { return d })
+

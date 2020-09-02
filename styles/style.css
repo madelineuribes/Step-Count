@@ -53,6 +53,7 @@ p {
 
 rect {
   fill: var(--primary-orange);
+  transition: fill 0.5s;
 }
 
 circle {
@@ -63,4 +64,8 @@ text {
   fill: var(--secondary-orange);
   text-anchor: middle;
   font-size: 14px;
+}
+
+rect:hover {
+  fill: var(--primary-blue);
 }

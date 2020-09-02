@@ -4,6 +4,8 @@ const radiusScale = d3.scaleSqrt()
   .domain([0, 30000])
   .range([0, 50])
 
+const monthFormat = d3.format(",")
+
 const monthGroups = monthSvg
   .selectAll("g")
   .data(monthData)
@@ -52,6 +54,6 @@ monthGroups
   .append("text")
   .attr("class", "steps")
   .attr("x", 0)
-  .attr("y", 70)
-  .text((d, i) => { return d })
+  .attr("y", 65)
+  .text((d, i) => { return monthFormat(d) })
 

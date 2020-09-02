@@ -14,6 +14,14 @@ const todayGroups = todaySvg
 todayGroups
   .append("rect")
   .attr("x", 0)
+  .attr("y", 0)
+  .attr("width", 24)
+  .attr("height", 140)
+  .attr("class", "transparent")
+
+todayGroups
+  .append("rect")
+  .attr("x", 0)
   .attr("y", (d, i) => { return 120 })
   .attr("width", 24)
   .attr("height", 0)
@@ -35,4 +43,5 @@ todayGroups
   .attr("y", (d, i) => { return 110 - barScale(d) })
   .attr("class", "steps")
   .text((d, i) => { return d })
+
 

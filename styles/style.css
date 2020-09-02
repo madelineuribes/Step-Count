@@ -69,3 +69,17 @@ text {
 rect:hover {
   fill: var(--primary-blue);
 }
+
+text.steps {
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+g:hover text.steps {
+  opacity: 1;
+}
+
+rect.transparent {
+  opacity: 0;
+}
+

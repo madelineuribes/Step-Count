@@ -19,7 +19,22 @@ monthGroups
   .append("circle")
   .attr("cx", 0)
   .attr("cy", 0)
+  .attr("r", radiusScale(10000))
+  .attr("class", "ring")
+
+monthGroups
+  .append("circle")
+  .attr("cx", 0)
+  .attr("cy", 0)
+  .attr("r", radiusScale(20000))
+  .attr("class", "ring")
+
+monthGroups
+  .append("circle")
+  .attr("cx", 0)
+  .attr("cy", 0)
   .attr("r", 10)
+  .attr("class", "actual")
   .transition()
   .duration(250)
   .delay((d, i) => { return i * 20 + 500 })

@@ -4,13 +4,21 @@ const radiusScale = d3.scaleSqrt()
   .domain([0, 30000])
   .range([0, 50])
 
-monthSvg
-  .selectAll("circle")
+const monthGroups = monthSvg
+  .selectAll("g")
   .data(monthData)
   .enter()
+  .append("g")
+  .attr("transform", (d, i) => {
+    const x = (i % 7) * 125 + 60
+    const y = Math.floor(i / 7) * 150 + 60
+    return `translate(${x}, ${y})`
+  })
+
+monthGroups
   .append("circle")
-  .attr("cx", (d, i) => { return (i % 7) * 120 + 60 })
-  .attr("cy", (d, i) => { return Math.floor(i / 7) * 100 + 60 })
+  .attr("cx", 0)
+  .attr("cy", 0)
   .attr("r", 10)
   .transition()
   .duration(250)

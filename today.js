@@ -35,7 +35,7 @@ todayGroups
   .attr("x", 12)
   .attr("y", 140)
   .attr("class", "hours")
-  .text((d, i) => { return i })
+  .text((d, i) => { return i + 1 })
 
 todayGroups
   .append("text")

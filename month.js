@@ -40,3 +40,18 @@ monthGroups
   .delay((d, i) => { return i * 20 + 500 })
   .ease(d3.easeCubicIn)
   .attr("r", (d, i) => { return radiusScale(d) })
+
+monthGroups
+  .append("text")
+  .attr("class", "day")
+  .attr("x", 0)
+  .attr("y", 65)
+  .text((d, i) => { return i + 1 })
+
+monthGroups
+  .append("text")
+  .attr("class", "steps")
+  .attr("x", 0)
+  .attr("y", 70)
+  .text((d, i) => { return d })
+
